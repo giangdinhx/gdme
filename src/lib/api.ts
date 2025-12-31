@@ -15,6 +15,11 @@ export function getPostBySlug(slug: string) {
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
+  // Ensure date is a string
+  if (data.date && typeof data.date !== 'string') {
+    data.date = data.date.toISOString();
+  }
+
   return { ...data, slug: realSlug, content } as Post;
 }
 
