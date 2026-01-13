@@ -461,7 +461,6 @@ article img {
   transform: translateY(20px) scale(0.8);
   z-index: 1000;
   outline: none;
-  position: relative;
 }
 
 .scroll-to-top::before {
