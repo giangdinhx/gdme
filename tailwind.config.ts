@@ -10,17 +10,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        "primary": "#39a3ef",
+        "primary": "#10b981", // Emerald-500
         "background-light": "#ffffff",
         "background-dark": "#0a0a0a",
-        "text-main": "#18181b",
-        "text-muted": "#a1a1aa",
+        "text-main": "#111111",
+        "text-muted": "#666666",
+        "text-light": "#ffffff",
       },
       fontFamily: {
-        "display": ["Inter", "sans-serif"],
-        "body": ["Inter", "sans-serif"],
+        "display": ["var(--font-inter)", "Inter", "sans-serif"],
+        "body": ["var(--font-noto-sans)", "Noto Sans", "Inter", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
+        "mono": ["monospace"],
       },
-      borderRadius: { "DEFAULT": "2px", "lg": "4px", "full": "9999px" },
+      borderRadius: { "DEFAULT": "2px", "lg": "12px", "full": "9999px" },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

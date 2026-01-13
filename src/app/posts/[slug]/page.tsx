@@ -1,66 +1,124 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getAllPosts, getPostBySlug } from "../../../lib/api";
-import { CMS_NAME } from "../../../lib/constants";
-import markdownToHtml from "../../../lib/markdownToHtml";
-import Alert from "../../_components/alert";
-import { PostBody } from "../../_components/post-body";
-import { PostHeader } from "../../_components/post-header";
-
-export default async function Post({ params }: Params) {
-  const post = getPostBySlug(params.slug);
-
-  if (!post) {
-    return notFound();
-  }
-
-  const content = await markdownToHtml(post.content || "");
-
-  return (
-    <main className="pt-32 pb-20">
-      <Alert preview={post.preview} />
-      <div className="max-w-[900px] mx-auto px-6">
-        <article className="mb-32">
-          <PostHeader
-            title={post.title}
-            coverImage={post.coverImage}
-            date={post.date}
-            author={post.author}
-          />
-          <PostBody content={content} />
-        </article>
-      </div>
-    </main>
-  );
-}
+import Link from "next/link";
+import { getPostBySlug, getAllPosts } from "@/lib/api";
+import markdownToHtml from "@/lib/markdownToHtml";
+import SocialLinks from "@/app/_components/social-links";
+import markdownStyles from "@/app/_components/markdown-styles.module.css";
 
 type Params = {
-  params: {
-    slug: string;
-  };
+    params: Promise<{
+        slug: string;
+    }>;
 };
 
-export function generateMetadata({ params }: Params): Metadata {
-  const post = getPostBySlug(params.slug);
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
+    const { slug } = await params;
+    const post = getPostBySlug(slug);
 
-  if (!post) {
-    return notFound();
-  }
+    if (!post) {
+        return {};
+    }
 
-  const title = `${post.title} | Next.js Blog Example with ${CMS_NAME}`;
+    const title = `${post.title} | Giang Đinh`;
 
-  return {
-    openGraph: {
-      title,
-      images: [post.ogImage.url],
-    },
-  };
+    return {
+        title,
+        description: post.excerpt,
+    };
 }
 
 export async function generateStaticParams() {
-  const posts = getAllPosts();
+    const posts = getAllPosts();
 
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
+    return posts.map((post) => ({
+        slug: post.slug,
+    }));
+}
+
+export default async function Post({ params }: Params) {
+    const { slug } = await params;
+    const post = getPostBySlug(slug);
+
+    if (!post) {
+        return notFound();
+    }
+
+    const content = await markdownToHtml(post.content || "");
+
+    return (
+        <div className="container">
+            <header className="header">
+                <div className="avatar">
+                    <img src="/img/avatar.webp" alt="Giang Đinh" />
+                </div>
+                <h1>Giang Đinh</h1>
+                <p className="tagline">Developer • Writer • Creator</p>
+            </header>
+
+            <nav className="nav">
+                <Link href="/">Giới thiệu</Link>
+                <Link href="/posts" className="active">Bài viết</Link>
+                <Link href="/contact">Liên hệ</Link>
+            </nav>
+
+            <main className="content">
+                <article>
+                    <header style={{ marginBottom: '40px', textAlign: 'center' }}>
+                        <h2 style={{
+                            fontSize: '32px',
+                            fontWeight: 700,
+                            marginBottom: '16px',
+                            background: 'linear-gradient(135deg, #657b83 0%, #586e75 100%)',
+                            WebkitBackgroundClip: 'text',
+                            WebkitTextFillColor: 'transparent',
+                            backgroundClip: 'text',
+                            lineHeight: 1.3
+                        }}>
+                            {post.title}
+                        </h2>
+                        {post.date && (
+                            <time style={{ fontSize: '14px', color: '#93a1a1', display: 'block' }}>
+                                {new Date(post.date).toLocaleDateString('vi-VN', {
+                                    year: 'numeric',
+                                    month: 'long',
+                                    day: 'numeric'
+                                })}
+                            </time>
+                        )}
+                    </header>
+
+                    <div
+                        className={markdownStyles["markdown"]}
+                        dangerouslySetInnerHTML={{ __html: content }}
+                        style={{
+                            fontSize: '17px',
+                            lineHeight: 1.9,
+                            color: '#586e75'
+                        }}
+                    />
+                </article>
+
+                <div style={{
+                    marginTop: '60px',
+                    paddingTop: '30px',
+                    borderTop: '1px solid rgba(147, 161, 161, 0.25)',
+                    textAlign: 'center',
+                    position: 'relative'
+                }}>
+                    <Link
+                        href="/posts"
+                        className="back-button"
+                    >
+                        ← Quay lại danh sách bài viết
+                    </Link>
+                </div>
+            </main>
+
+            <footer>
+                <SocialLinks />
+                <p className="copyright">© 2026 Giang Đinh</p>
+            </footer>
+        </div>
+    );
 }

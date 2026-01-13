@@ -11,8 +11,182 @@
 
 .markdown h2 {
   @apply text-3xl mt-12 mb-4 leading-snug;
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-weight: 700;
+  color: #586e75;
 }
 
 .markdown h3 {
   @apply text-2xl mt-8 mb-4 leading-snug;
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-weight: 600;
+  color: #586e75;
+}
+
+.markdown h4 {
+  @apply text-xl mt-6 mb-3 leading-snug;
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-weight: 600;
+  color: #657b83;
+}
+
+.markdown img {
+  @apply w-full h-auto rounded-lg my-8 shadow-md;
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid rgba(147, 161, 161, 0.15);
+}
+
+.markdown a {
+  color: #657b83;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(101, 123, 131, 0.3);
+  transition: all 0.3s ease;
+}
+
+.markdown a:hover {
+  color: #586e75;
+  border-bottom-color: #586e75;
+}
+
+.markdown strong {
+  font-weight: 600;
+  color: #586e75;
+}
+
+.markdown em {
+  font-style: italic;
+  color: #657b83;
+}
+
+.markdown ul,
+.markdown ol {
+  padding-left: 1.5em;
+  margin: 1.5em 0;
+}
+
+.markdown ul {
+  list-style-type: disc;
+}
+
+.markdown ol {
+  list-style-type: decimal;
+}
+
+.markdown li {
+  margin: 0.5em 0;
+  line-height: 1.8;
+}
+
+.markdown li>p {
+  margin: 0.25em 0;
+}
+
+.markdown blockquote {
+  border-left: 4px solid #657b83;
+  padding-left: 1.5em;
+  margin: 2em 0;
+  font-style: italic;
+  color: #93a1a1;
+  background: rgba(101, 123, 131, 0.05);
+  padding: 1em 1.5em;
+  border-radius: 8px;
+}
+
+.markdown blockquote p {
+  margin: 0.5em 0;
+}
+
+.markdown code {
+  background: rgba(101, 123, 131, 0.1);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+  font-size: 0.9em;
+  color: #586e75;
+}
+
+.markdown pre {
+  background: rgba(101, 123, 131, 0.08);
+  padding: 1.5em;
+  border-radius: 12px;
+  overflow-x: auto;
+  margin: 2em 0;
+  border: 1px solid rgba(147, 161, 161, 0.2);
+}
+
+.markdown pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  font-size: 0.875em;
+  line-height: 1.6;
+}
+
+.markdown hr {
+  border: none;
+  border-top: 1px solid rgba(147, 161, 161, 0.25);
+  margin: 3em 0;
+  position: relative;
+}
+
+.markdown hr::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #657b83, transparent);
+}
+
+.markdown table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2em 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(147, 161, 161, 0.2);
+}
+
+.markdown table thead {
+  background: rgba(101, 123, 131, 0.1);
+}
+
+.markdown table th {
+  padding: 0.75em 1em;
+  text-align: left;
+  font-weight: 600;
+  color: #586e75;
+  border-bottom: 2px solid rgba(147, 161, 161, 0.3);
+}
+
+.markdown table td {
+  padding: 0.75em 1em;
+  border-bottom: 1px solid rgba(147, 161, 161, 0.15);
+}
+
+.markdown table tr:last-child td {
+  border-bottom: none;
+}
+
+.markdown table tr:hover {
+  background: rgba(101, 123, 131, 0.05);
+}
+
+/* Task lists */
+.markdown input[type="checkbox"] {
+  margin-right: 0.5em;
+  cursor: pointer;
+}
+
+/* Strikethrough */
+.markdown del {
+  text-decoration: line-through;
+  color: #93a1a1;
+  opacity: 0.7;
 }
