@@ -51,7 +51,7 @@ export function getPostBySlug(slug: string) {
 export function getAllPosts(): Post[] {
   const slugs = getPostSlugs();
   const posts = slugs
-    .filter((slug) => slug !== "about.md") // Exclude about.md from posts
+    .filter((slug) => slug !== "about.md" && slug !== "changelog.md") // Exclude special pages
     .map((slug) => getPostBySlug(slug))
     // sort posts by date in descending order
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
@@ -60,6 +60,26 @@ export function getAllPosts(): Post[] {
 
 export function getAboutContent() {
   const fullPath = join(postsDirectory, "about.md");
+
+  // Check if file exists
+  if (!fs.existsSync(fullPath)) {
+    return {
+      content: "",
+      data: {}
+    };
+  }
+
+  const fileContents = fs.readFileSync(fullPath, "utf8");
+  const { data, content } = matter(fileContents);
+
+  return {
+    content,
+    data
+  };
+}
+
+export function getChangelogContent() {
+  const fullPath = join(postsDirectory, "changelog.md");
 
   // Check if file exists
   if (!fs.existsSync(fullPath)) {

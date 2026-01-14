@@ -6,10 +6,12 @@ Xin chào! Cảm ơn bạn đã dành thời gian ghé thăm blog nhỏ này c�
 
 Tôi là Giang Đinh, aka. Giang(Rang) Cua, là một người đam mê công nghệ và thích những hoạt động trải nghiệm về cuộc sống, thiên nhiên. 
 
-:::highlight
-**Hiện tại**, tôi đang tập trung phát triển [NextGen Platform](#) - một công cụ giúp developers xây dựng ứng dụng nhanh hơn và hiệu quả hơn.
-:::
+Với tôi mỗi trải nghiệm đều mang những bài học cá nhân của mình. Với những dòng chia sẻ ngắn, ghi lại hành trình này thì tôi hy vọng. Khi bạn dành chút thời gian theo dõi những bài viết của tôi, đều sẽ mang lại cho bạn một chút gì đó thú vị trên hành trình sắp tới. 
 
-Trong quá khứ, tôi đã tham gia xây dựng nhiều dự án thú vị như [Project Alpha](#), [Project Beta](#), [Project Gamma](#), và [Project Delta](#). Mỗi dự án đều mang lại những trải nghiệm và bài học quý giá.
+Nếu cảm thấy có kết nối hoặc có câu hỏi muốn đặt ra cho tôi, bạn có thể để lại lời nhắn thông qua các mạng xã hội cá nhân hoặc qua email được gắn ở mục Liên hệ. 
 
-Ngoài coding, tôi thích [viết blog](/posts) về công nghệ, chia sẻ kinh nghiệm làm việc, và khám phá những xu hướng mới trong ngành. Đôi khi tôi cũng [chụp ảnh](#) và du lịch để tìm nguồn cảm hứng mới.
+_**Lokah Samastah Sukhino Bhavantu. Om Shanti Shanti Shanti. Namaste**_
+
+Cảm ơn, cầu mong bình an và hạnh phúc sẽ luôn đến với bạn. 
+
+Giang Cua.

@@ -12,11 +12,11 @@ export default function PostsPage() {
                     <img src="/img/avatar.webp" alt="Giang Đinh" />
                 </div>
                 <h1>Giang Đinh</h1>
-                <p className="tagline">Developer • Writer • Creator</p>
+                <p className="tagline">Người Chia Sẻ Những Trải Nghiệm</p>
             </header>
 
             <nav className="nav">
-                <Link href="/">Giới thiệu</Link>
+                <Link href="/">Trang chủ</Link>
                 <Link href="/posts" className="active">Bài viết</Link>
                 <Link href="/contact">Liên hệ</Link>
             </nav>
