@@ -132,6 +132,7 @@ export function getProductBySlug(slug: string): Product {
 export function getAllProducts(): Product[] {
   const slugs = getProductSlugs();
   const products = slugs
+    .filter((slug) => slug !== "README.md") // Exclude README file
     .map((slug) => getProductBySlug(slug))
     .sort((product1, product2) => (product1.publishDate > product2.publishDate ? -1 : 1));
   return products;

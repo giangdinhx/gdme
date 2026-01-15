@@ -531,16 +531,10 @@ article img {
   transition: all 0.3s ease;
 }
 
-.product-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(101, 123, 131, 0.12) !important;
-  border-color: #93a1a1 !important;
-}
-
 .buy-button:hover {
-  background-color: #586e75 !important;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(101, 123, 131, 0.3) !important;
+  background-color: #047857 !important;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(5, 150, 105, 0.4) !important;
 }
 
 /* Tablet - 2 columns */

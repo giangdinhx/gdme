@@ -41,7 +41,7 @@ export default function ShopPage() {
                     display: 'grid',
                     gridTemplateColumns: 'repeat(3, 1fr)',
                     gap: '24px',
-                    marginTop: '32px'
+                    marginTop: '2px'
                 }}>
                     {products.map((product) => {
                         return (
@@ -50,10 +50,9 @@ export default function ShopPage() {
                                 style={{
                                     backgroundColor: '#fdf6e3',
                                     border: '1px solid #eee8d5',
-                                    borderRadius: '12px',
+                                    borderRadius: '10px',
                                     overflow: 'hidden',
-                                    transition: 'all 0.3s ease',
-                                    boxShadow: '0 2px 8px rgba(101, 123, 131, 0.06)',
+                                    boxShadow: '0 2px 8px rgba(101, 123, 131, 0.05)',
                                     display: 'flex',
                                     flexDirection: 'column'
                                 }}
@@ -65,8 +64,7 @@ export default function ShopPage() {
                                     paddingBottom: '100%',
                                     backgroundColor: '#eee8d5',
                                     position: 'relative',
-                                    overflow: 'hidden',
-                                    borderRadius: '12px 12px 0 0'
+                                    overflow: 'hidden'
                                 }}>
                                     <img
                                         src={product.image}
@@ -84,10 +82,11 @@ export default function ShopPage() {
 
                                 {/* Product Content */}
                                 <div style={{
-                                    padding: '20px',
+                                    padding: '12px',
                                     display: 'flex',
                                     flexDirection: 'column',
-                                    gap: '12px'
+                                    gap: '4px',
+                                    flex: 1
                                 }}>
                                     <h3 style={{
                                         fontSize: '18px',
@@ -101,31 +100,52 @@ export default function ShopPage() {
                                         {product.title}
                                     </h3>
 
-                                    <a
-                                        href={product.buyLink}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        style={{
-                                            width: '100%',
-                                            padding: '14px 24px',
-                                            fontSize: '15px',
-                                            fontWeight: 600,
-                                            color: '#fdf6e3',
-                                            backgroundColor: '#657b83',
-                                            border: 'none',
-                                            borderRadius: '8px',
-                                            textDecoration: 'none',
-                                            textAlign: 'center',
-                                            cursor: 'pointer',
-                                            transition: 'all 0.3s ease',
-                                            fontFamily: 'Inter, sans-serif',
-                                            boxShadow: '0 2px 8px rgba(101, 123, 131, 0.2)',
-                                            display: 'block'
-                                        }}
-                                        className="buy-button"
-                                    >
-                                        🛒 Mua hàng
-                                    </a>
+                                    <div style={{ marginTop: 'auto', paddingTop: '10px' }}>
+                                        <a
+                                            href={product.buyLink}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            style={{
+                                                width: '100%',
+                                                padding: '14px 20px',
+                                                fontSize: '14px',
+                                                fontWeight: 700,
+                                                letterSpacing: '0.8px',
+                                                color: '#fdf6e3',
+                                                backgroundColor: '#059669',
+                                                border: 'none',
+                                                borderRadius: '8px',
+                                                textDecoration: 'none',
+                                                textAlign: 'center',
+                                                cursor: 'pointer',
+                                                transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+                                                fontFamily: 'Inter, sans-serif',
+                                                boxShadow: '0 4px 12px rgba(5, 150, 105, 0.25)',
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                justifyContent: 'center',
+                                                gap: '8px'
+                                            }}
+                                            className="buy-button"
+                                        >
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="18"
+                                                height="18"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                strokeWidth="2.5"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                            >
+                                                <circle cx="8" cy="21" r="1" />
+                                                <circle cx="19" cy="21" r="1" />
+                                                <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+                                            </svg>
+                                            MUA NGAY
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         );
