@@ -9,6 +9,10 @@ _(Hi there! If you’ve found your way to this page, I just want to say **thank 
 There isn’t much in the way of personal content here, so that’s pretty much it for now.
 Let’s just follow each other and stay connected like friends, okay? 😊)_
 
+### v0.3
+- Cập nhật shop
+- Cập nhật layout
+
 ### v0.2
 - Cập nhật changelog
 - Nội dung about
