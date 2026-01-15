@@ -1,9 +1,11 @@
 import { Post } from "@/interfaces/post";
+import { Product } from "@/interfaces/product";
 import fs from "fs";
 import matter from "gray-matter";
 import { join } from "path";
 
 const postsDirectory = join(process.cwd(), "content");
+const productsDirectory = join(process.cwd(), "content/product");
 
 export function getPostSlugs() {
   return fs.readdirSync(postsDirectory)
@@ -98,3 +100,39 @@ export function getChangelogContent() {
   };
 }
 
+// Product functions
+export function getProductSlugs() {
+  if (!fs.existsSync(productsDirectory)) {
+    return [];
+  }
+  return fs.readdirSync(productsDirectory)
+    .filter((file) => file.endsWith('.md') && !file.startsWith('.'));
+}
+
+export function getProductBySlug(slug: string): Product {
+  const realSlug = slug.replace(/\.md$/, "");
+  const fullPath = join(productsDirectory, `${realSlug}.md`);
+  const fileContents = fs.readFileSync(fullPath, "utf8");
+  const { data, content } = matter(fileContents);
+
+  return {
+    slug: realSlug,
+    title: data.title || "",
+    description: data.description || "",
+    price: data.price || "",
+    image: data.image || "",
+    buyLink: data.buyLink || "",
+    publishDate: data.publishDate || new Date().toISOString(),
+    featured: data.featured || false,
+    category: data.category || "",
+    content,
+  };
+}
+
+export function getAllProducts(): Product[] {
+  const slugs = getProductSlugs();
+  const products = slugs
+    .map((slug) => getProductBySlug(slug))
+    .sort((product1, product2) => (product1.publishDate > product2.publishDate ? -1 : 1));
+  return products;
+}

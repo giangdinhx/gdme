@@ -58,7 +58,7 @@ export default async function Post({ params }: Params) {
 
             <nav className="nav">
                 <Link href="/">Trang chủ</Link>
-                <Link href="/posts" className="active">Bài viết</Link>
+                <Link href="/posts">Bài viết</Link>
                 <Link href="/contact">Liên hệ</Link>
             </nav>
 

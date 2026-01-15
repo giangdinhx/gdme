@@ -30,6 +30,7 @@ export default function Index() {
         <Link href="/contact">Liên hệ</Link>
       </nav>
 
+
       <main className="content">
         <AboutContent content={content} />
       </main>
