@@ -1,4 +1,3 @@
-import Link from "next/link";
 import SocialLinks from "@/app/_components/social-links";
 import { getAllProducts } from "@/lib/api";
 
@@ -15,9 +14,9 @@ export default function ShopPage() {
             </header>
 
             <nav className="nav">
-                <Link href="/">Trang chủ</Link>
-                <Link href="/posts">Bài viết</Link>
-                <Link href="/contact">Liên hệ</Link>
+                <a href="/">Trang chủ</a>
+                <a href="/posts">Bài viết</a>
+                <a href="/contact">Liên hệ</a>
             </nav>
 
 
@@ -40,8 +39,8 @@ export default function ShopPage() {
 
                 <div className="shop-grid" style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(2, 1fr)',
-                    gap: '40px',
+                    gridTemplateColumns: 'repeat(3, 1fr)',
+                    gap: '24px',
                     marginTop: '32px'
                 }}>
                     {products.map((product) => {
@@ -50,24 +49,24 @@ export default function ShopPage() {
                                 key={product.slug}
                                 style={{
                                     backgroundColor: '#fdf6e3',
-                                    border: '2px solid #eee8d5',
-                                    borderRadius: '16px',
+                                    border: '1px solid #eee8d5',
+                                    borderRadius: '12px',
                                     overflow: 'hidden',
-                                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                                    boxShadow: '0 4px 12px rgba(101, 123, 131, 0.08)',
+                                    transition: 'all 0.3s ease',
+                                    boxShadow: '0 2px 8px rgba(101, 123, 131, 0.06)',
                                     display: 'flex',
-                                    flexDirection: 'column',
-                                    height: '100%'
+                                    flexDirection: 'column'
                                 }}
                                 className="product-card"
                             >
                                 {/* Product Image - Square */}
                                 <div style={{
                                     width: '100%',
-                                    paddingBottom: '100%', // Creates square aspect ratio
+                                    paddingBottom: '100%',
                                     backgroundColor: '#eee8d5',
                                     position: 'relative',
-                                    overflow: 'hidden'
+                                    overflow: 'hidden',
+                                    borderRadius: '12px 12px 0 0'
                                 }}>
                                     <img
                                         src={product.image}
@@ -78,106 +77,55 @@ export default function ShopPage() {
                                             left: 0,
                                             width: '100%',
                                             height: '100%',
-                                            objectFit: 'cover',
-                                            transition: 'transform 0.3s ease'
+                                            objectFit: 'cover'
                                         }}
                                     />
                                 </div>
 
                                 {/* Product Content */}
                                 <div style={{
-                                    padding: '28px',
+                                    padding: '20px',
                                     display: 'flex',
                                     flexDirection: 'column',
-                                    flexGrow: 1,
-                                    gap: '14px'
+                                    gap: '12px'
                                 }}>
                                     <h3 style={{
-                                        fontSize: '26px',
-                                        fontWeight: 700,
+                                        fontSize: '18px',
+                                        fontWeight: 600,
                                         color: '#657b83',
-                                        marginBottom: '6px',
-                                        fontFamily: 'Crimson Pro, serif',
-                                        lineHeight: 1.3
+                                        margin: 0,
+                                        fontFamily: 'Inter, sans-serif',
+                                        lineHeight: 1.4,
+                                        textAlign: 'center'
                                     }}>
                                         {product.title}
                                     </h3>
 
-                                    <p style={{
-                                        fontSize: '22px',
-                                        fontWeight: 700,
-                                        color: '#dc322f',
-                                        marginBottom: '10px'
-                                    }}>
-                                        {product.price}
-                                    </p>
-
-                                    <p style={{
-                                        fontSize: '16px',
-                                        color: '#586e75',
-                                        lineHeight: '1.8',
-                                        marginBottom: 'auto',
-                                        flexGrow: 1
-                                    }}>
-                                        {product.description}
-                                    </p>
-
-                                    {/* Action Buttons */}
-                                    <div style={{
-                                        display: 'flex',
-                                        flexDirection: 'column',
-                                        gap: '12px',
-                                        marginTop: '16px'
-                                    }}>
-                                        <Link
-                                            href={`/product/${product.slug}`}
-                                            style={{
-                                                width: '100%',
-                                                padding: '16px 24px',
-                                                fontSize: '16px',
-                                                fontWeight: 600,
-                                                color: '#657b83',
-                                                backgroundColor: 'transparent',
-                                                border: '2px solid #657b83',
-                                                borderRadius: '12px',
-                                                textDecoration: 'none',
-                                                textAlign: 'center',
-                                                cursor: 'pointer',
-                                                transition: 'all 0.3s ease',
-                                                fontFamily: 'Inter, sans-serif',
-                                                display: 'block'
-                                            }}
-                                            className="detail-button"
-                                        >
-                                            📖 Thông tin chi tiết
-                                        </Link>
-
-                                        <a
-                                            href={product.buyLink}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            style={{
-                                                width: '100%',
-                                                padding: '16px 24px',
-                                                fontSize: '16px',
-                                                fontWeight: 600,
-                                                color: '#fdf6e3',
-                                                backgroundColor: '#657b83',
-                                                border: 'none',
-                                                borderRadius: '12px',
-                                                textDecoration: 'none',
-                                                textAlign: 'center',
-                                                cursor: 'pointer',
-                                                transition: 'all 0.3s ease',
-                                                fontFamily: 'Inter, sans-serif',
-                                                boxShadow: '0 4px 12px rgba(101, 123, 131, 0.25)',
-                                                display: 'block'
-                                            }}
-                                            className="buy-button"
-                                        >
-                                            🛒 Mua hàng
-                                        </a>
-                                    </div>
+                                    <a
+                                        href={product.buyLink}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        style={{
+                                            width: '100%',
+                                            padding: '14px 24px',
+                                            fontSize: '15px',
+                                            fontWeight: 600,
+                                            color: '#fdf6e3',
+                                            backgroundColor: '#657b83',
+                                            border: 'none',
+                                            borderRadius: '8px',
+                                            textDecoration: 'none',
+                                            textAlign: 'center',
+                                            cursor: 'pointer',
+                                            transition: 'all 0.3s ease',
+                                            fontFamily: 'Inter, sans-serif',
+                                            boxShadow: '0 2px 8px rgba(101, 123, 131, 0.2)',
+                                            display: 'block'
+                                        }}
+                                        className="buy-button"
+                                    >
+                                        🛒 Mua hàng
+                                    </a>
                                 </div>
                             </div>
                         );
