@@ -28,12 +28,13 @@ export default function ShopPage() {
                     background: 'linear-gradient(135deg, #657b83 0%, #586e75 100%)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text'
+                    backgroundClip: 'text',
+                    textAlign: 'center'
                 }}>
                     Sản phẩm đề xuất
                 </h2>
 
-                <p style={{ marginBottom: '40px', color: '#586e75', lineHeight: '1.7' }}>
+                <p style={{ marginBottom: '40px', color: '#586e75', lineHeight: '1.7', textAlign: 'center', maxWidth: '800px', margin: '0 auto 40px' }}>
                     Đây là những sản phẩm mà tôi đang sử dụng và muốn giới thiệu đến các bạn.
                 </p>
 

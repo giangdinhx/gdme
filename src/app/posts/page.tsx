@@ -29,7 +29,8 @@ export default function PostsPage() {
                     background: 'linear-gradient(135deg, #657b83 0%, #586e75 100%)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text'
+                    backgroundClip: 'text',
+                    textAlign: 'center'
                 }}>
                     Bài viết của tôi
                 </h2>

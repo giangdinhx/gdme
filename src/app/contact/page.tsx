@@ -58,21 +58,22 @@ export default function ContactPage() {
                     background: 'linear-gradient(135deg, #657b83 0%, #586e75 100%)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text'
+                    backgroundClip: 'text',
+                    textAlign: 'center'
                 }}>
                     Liên hệ với tôi
                 </h2>
 
-                <p style={{ marginBottom: '30px', color: '#586e75', lineHeight: '1.7' }}>
-                    Tôi luôn sẵn sàng kết nối và trao đổi về công nghệ, dự án, hoặc bất kỳ ý tưởng thú vị nào.
-                    Hãy điền vào form bên dưới và tôi sẽ phản hồi sớm nhất có thể!
+                <p style={{ marginBottom: '40px', color: '#586e75', lineHeight: '1.7', textAlign: 'center', maxWidth: '600px', margin: '0 auto 40px' }}>
+                    Nếu bạn có bất kỳ câu hỏi, góp ý hoặc muốn hợp tác, đừng ngần ngại liên hệ với tôi qua form dưới đây.
                 </p>
 
                 <form onSubmit={handleSubmit} style={{
                     display: 'flex',
                     flexDirection: 'column',
                     gap: '20px',
-                    maxWidth: '600px'
+                    maxWidth: '600px',
+                    margin: '0 auto'
                 }}>
                     <div>
                         <label htmlFor="name" style={{
