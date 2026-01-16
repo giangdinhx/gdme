@@ -353,21 +353,50 @@ footer::before {
   }
 
   .container {
-    padding: 40px 30px;
-    margin: 20px auto;
-    border-radius: 24px;
+    padding: 40px 20px;
+    margin: 15px auto;
+    border-radius: 20px;
   }
 
   h1 {
-    font-size: 36px;
+    font-size: 34px;
+    text-align: center;
+  }
+
+  .header p {
+    text-align: center;
   }
 
   .nav {
-    gap: 24px;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .content {
     font-size: 16px;
+    text-align: center;
+  }
+
+  .content p {
+    text-align: center;
+  }
+
+  /* Center blog post items on mobile */
+  .post-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px !important;
+    padding: 16px 0 !important;
+  }
+
+  .post-item time {
+    min-width: auto !important;
+  }
+
+  .post-item h3 {
+    white-space: normal !important;
+    text-align: center;
   }
 }
 
