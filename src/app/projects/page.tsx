@@ -46,6 +46,7 @@ export default function ProjectsPage() {
             <nav className="nav">
                 <Link href="/">Trang chủ</Link>
                 <Link href="/posts">Bài viết</Link>
+                <Link href="/shop">Shop</Link>
                 <Link href="/contact">Liên hệ</Link>
             </nav>
 

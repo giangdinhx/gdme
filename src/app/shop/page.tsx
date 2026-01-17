@@ -1,3 +1,4 @@
+import Link from "next/link";
 import SocialLinks from "@/app/_components/social-links";
 import { getAllProducts } from "@/lib/api";
 
@@ -14,9 +15,10 @@ export default function ShopPage() {
             </header>
 
             <nav className="nav">
-                <a href="/">Trang chủ</a>
-                <a href="/posts">Bài viết</a>
-                <a href="/contact">Liên hệ</a>
+                <Link href="/">Trang chủ</Link>
+                <Link href="/posts">Bài viết</Link>
+                <Link href="/shop" className="active">Shop</Link>
+                <Link href="/contact">Liên hệ</Link>
             </nav>
 
 

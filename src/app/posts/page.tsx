@@ -18,6 +18,7 @@ export default function PostsPage() {
             <nav className="nav">
                 <Link href="/">Trang chủ</Link>
                 <Link href="/posts" className="active">Bài viết</Link>
+                <Link href="/shop">Shop</Link>
                 <Link href="/contact">Liên hệ</Link>
             </nav>
 

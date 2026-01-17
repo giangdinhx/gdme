@@ -47,6 +47,7 @@ export default function ContactPage() {
             <nav className="nav">
                 <Link href="/">Trang chủ</Link>
                 <Link href="/posts">Bài viết</Link>
+                <Link href="/shop">Shop</Link>
                 <Link href="/contact" className="active">Liên hệ</Link>
             </nav>
 
