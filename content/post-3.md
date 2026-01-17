@@ -3,7 +3,7 @@ title: "Architecting a Calm Productivity System"
 url: "post-3"
 publishDate: "2024-07-22"
 categories: ["blog"]
-tags: ["productivity", "systems", "organization"]
+tags: ["productivity"]
 status: "published"
 coverImage: "/images/showcase/showcase-project-3.png"
 seo:

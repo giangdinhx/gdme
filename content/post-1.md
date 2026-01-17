@@ -3,7 +3,7 @@ title: "The Art of Digital Minimalism"
 url: "post-1"
 publishDate: "2024-07-28"
 categories: ["blog"]
-tags: ["minimalism", "productivity", "focus"]
+tags: ["minimalism", "productivity"]
 status: "published"
 coverImage: "/images/showcase/showcase-project-2.png"
 seo:

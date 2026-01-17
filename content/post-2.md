@@ -3,7 +3,7 @@ title: "Breathing Techniques for Coders"
 url: "post-2"
 publishDate: "2024-07-25"
 categories: ["blog"]
-tags: ["wellness", "productivity", "mindfulness"]
+tags: ["wellness", "mindfulness"]
 status: "published"
 coverImage: "/images/showcase/showcase-project-1.png"
 seo:

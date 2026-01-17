@@ -41,41 +41,28 @@ export default function PostsPage() {
                             <div key={post.slug}>
                                 <Link
                                     href={`/posts/${post.slug}`}
-                                    style={{
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        gap: '20px',
-                                        padding: '12px 0',
-                                        textDecoration: 'none',
-                                        transition: 'all 0.2s ease'
-                                    }}
                                     className="post-item"
                                 >
                                     {post.date && (
-                                        <time style={{
-                                            fontSize: '15px',
-                                            color: '#93a1a1',
-                                            fontFamily: 'Inter, sans-serif',
-                                            fontWeight: 400,
-                                            minWidth: '90px',
-                                            flexShrink: 0
-                                        }}>
+                                        <time className="post-date">
                                             {new Date(post.date).toLocaleDateString('vi-VN')}
                                         </time>
                                     )}
-                                    <h3 style={{
-                                        fontSize: '17px',
-                                        fontWeight: 500,
-                                        fontFamily: 'Inter, sans-serif',
-                                        color: '#586e75',
-                                        margin: 0,
-                                        overflow: 'hidden',
-                                        textOverflow: 'ellipsis',
-                                        whiteSpace: 'nowrap',
-                                        flex: 1
-                                    }}>
+                                    <h3 className="post-title">
                                         {post.title}
                                     </h3>
+                                    {post.tags && post.tags.length > 0 && (
+                                        <div className="post-tags">
+                                            {post.tags.map(tag => (
+                                                <span
+                                                    key={tag}
+                                                    className="post-tag"
+                                                >
+                                                    #{tag}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    )}
                                 </Link>
                                 {index < allPosts.length - 1 && (
                                     <div style={{

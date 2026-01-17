@@ -3,7 +3,8 @@ title: "Nét Bút Tuổi Thơ 12 - Những Mảng Màu Ước Mơ"
 url: "nhung-mang-mau-uoc-mo"
 publishDate: "2025-04-21"
 categories: ["blog"]
-tags: ["leuheu"]
+tags: 
+  - leuheu
 status: "published"
 coverImage: "/img/nhung-mang-mau-uoc-mo.webp"
 seo:

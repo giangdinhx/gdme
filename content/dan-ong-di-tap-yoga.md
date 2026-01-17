@@ -5,8 +5,6 @@ publishDate: 2025-11-14
 categories:
   - blog
 tags:
-  - giangdinhyoga
-  - practice
   - yoga
 status: published
 coverImage: /img/dan-ong-tap-yoga.webp

@@ -39,6 +39,9 @@ export function getPostBySlug(slug: string) {
       name: "Giang Dinh",
       picture: "/img/giang-avatar.jpg", // Placeholder or assume exists
     },
+    tags: Array.isArray(data.tags)
+      ? data.tags.slice(0, 3)
+      : (typeof data.tags === 'string' ? data.tags.split(',').map(t => t.trim()).slice(0, 3) : []),
   };
 
   // Ensure date is a string

@@ -347,6 +347,53 @@ footer::before {
 }
 
 /* Responsive Design */
+/* Blog Post Item Classes */
+.post-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 12px 0;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.post-date {
+  font-size: 15px;
+  color: #93a1a1;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  min-width: 90px;
+  flex-shrink: 0;
+}
+
+.post-title {
+  font-size: 17px;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  color: #586e75;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+
+.post-tags {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.post-tag {
+  font-size: 12px;
+  color: #657b83;
+  background: rgba(147, 161, 161, 0.1);
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-family: 'Inter', sans-serif;
+}
+
 @media (max-width: 768px) {
   body {
     padding: 5px;
@@ -410,23 +457,45 @@ footer::before {
     margin-top: 0 !important;
   }
 
-  /* Center blog post items on mobile */
+  /* New layout for blog post items on mobile: Title top, Date | Tags bottom */
   .post-item {
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    gap: 4px !important;
-    padding: 12px 0 !important;
+    gap: 0 !important;
+    padding: 16px 0 !important;
   }
 
-  .post-item time {
+  .post-title {
+    width: 100% !important;
+    flex: none !important;
+    order: -1;
+    font-size: 17px !important;
+    white-space: normal !important;
+    margin-bottom: 8px !important;
+    line-height: 1.4;
+  }
+
+  .post-date {
     min-width: auto !important;
     font-size: 13px;
+    color: #93a1a1;
   }
 
-  .post-item h3 {
-    font-size: 16px !important;
-    white-space: normal !important;
-    text-align: center;
+  .post-tags {
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+    display: flex;
+    align-items: center;
+  }
+
+  .post-tags::before {
+    content: "|";
+    margin: 0 10px;
+    color: rgba(147, 161, 161, 0.4);
+    font-size: 13px;
+    font-weight: 300;
   }
 }
 
