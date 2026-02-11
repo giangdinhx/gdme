@@ -19,7 +19,6 @@ seo:
     - yoga practice
     - giangdinh
 ---
-
 Chuyện nó là như thế này. Những ngày tháng cuối năm 2018, khi mà tuổi chập chững bước sang 3x thì chiếc lưng bị chấn thương. Sau vài năm lăn lộn với nhiều hoạt động mà không thèm để ý thì bệnh nó phát ra khiến bản thân rơi vào trạng thái hoang mang. Không nghĩ là ở cái lứa tuổi đó mà lại bị đau lưng sớm như vậy. Đắn đo và lo lắng rất nhiều.
 
 Khi biết bị bệnh, mình đã đi uống thuốc, châm cứu, bấm huyệt rất nhiều. Cũng may là đỡ đi 1 chút, nhưng vẫn thấy cơ thể lúc đó thiếu đi sự linh hoạt và sức khoẻ. Thế rồi quyết định là đi vận động cơ thể để tìm lại bản thân. Không thích gym nên cũng lần mò các hình thức tập khác nhau để xem cái nào phù hợp với một người đang có bệnh như mình. Và quyết định dừng ở việc chọn yoga là bến đỗ.
