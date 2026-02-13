@@ -18,7 +18,7 @@ seo:
     - giangdinh
 ---
 
-Thanh Âm Bồng Bềnh — tên một buổi workshop "hụt" của tôi với sound bath và hangdrum.
+### Thanh Âm Bồng Bềnh — tên một buổi workshop "hụt" của tôi với sound bath và hangdrum.
 
 Lần đầu nghe tiếng hangdrum, tôi không biết gọi tên cái cảm giác đó.
 
@@ -80,4 +80,4 @@ Chúc các tình yêu luôn hạnh phúc và tươi tắn.
 
 ---
 
-#giangdinhme #gocleuheu #hangdrum #soundhealing #slowliving #valentine
+#giangdinhme  #hangdrum #soundhealing #yoga  #valentine
