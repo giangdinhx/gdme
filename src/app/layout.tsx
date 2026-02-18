@@ -6,7 +6,7 @@ import ScrollToTop from "./_components/scroll-to-top";
 const inter = Inter({ subsets: ["latin", "vietnamese"] });
 
 export const metadata: Metadata = {
-    title: "Giang Đinh - Người Chia Sẻ Những Trải Nghiệm",
+    title: "Giang Đinh - Công Nghệ - Tập Luyện - Cuộc Sống",
     description: "Personal website of Giang Đinh - A developer passionate about technology",
     keywords: ["developer", "technology", "blog", "portfolio"],
     icons: {

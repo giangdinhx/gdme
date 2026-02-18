@@ -24,7 +24,7 @@ export default async function Changelog() {
                     <img src="/img/avatar.webp" alt="Giang Đinh" />
                 </div>
                 <h1>Giang Đinh</h1>
-                <p className="tagline">Người Chia Sẻ Những Trải Nghiệm</p>
+                <p className="tagline">Công Nghệ - Tập Luyện - Cuộc Sống</p>
             </header>
 
             <nav className="nav">
