@@ -42,7 +42,7 @@ export default function PostsPage() {
                             <div key={post.slug}>
                                 <Link
                                     href={`/posts/${post.slug}`}
-                                    className="post-item"
+                                    className={`post-item${post.locked ? ' post-item-locked' : ''}`}
                                 >
                                     {post.date && (
                                         <time className="post-date">
@@ -50,17 +50,18 @@ export default function PostsPage() {
                                         </time>
                                     )}
                                     <h3 className="post-title">
+                                        {post.locked && (
+                                            <svg className="post-lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                                            </svg>
+                                        )}
                                         {post.title}
                                     </h3>
                                     {post.tags && post.tags.length > 0 && (
                                         <div className="post-tags">
                                             {post.tags.map(tag => (
-                                                <span
-                                                    key={tag}
-                                                    className="post-tag"
-                                                >
-                                                    #{tag}
-                                                </span>
+                                                <span key={tag} className="post-tag">#{tag}</span>
                                             ))}
                                         </div>
                                     )}
@@ -78,7 +79,7 @@ export default function PostsPage() {
                 ) : (
                     <div className="highlight">
                         <p style={{ marginBottom: 0 }}>
-                            Chưa có bài viết nào. Hãy quay lại sau nhé! 📝
+                            Chưa có bài viết nào. Hãy quay lại sau nhé!
                         </p>
                     </div>
                 )}

@@ -42,6 +42,7 @@ export function getPostBySlug(slug: string) {
     tags: Array.isArray(data.tags)
       ? data.tags.slice(0, 3)
       : (typeof data.tags === 'string' ? data.tags.split(',').map(t => t.trim()).slice(0, 3) : []),
+    locked: !!data.password,
   };
 
   // Ensure date is a string
@@ -130,6 +131,15 @@ export function getProductBySlug(slug: string): Product {
     category: data.category || "",
     content,
   };
+}
+
+export function verifyPostPassword(slug: string, password: string): boolean {
+  const realSlug = slug.replace(/\.md$/, "");
+  const fullPath = join(postsDirectory, `${realSlug}.md`);
+  if (!fs.existsSync(fullPath)) return false;
+  const fileContents = fs.readFileSync(fullPath, "utf8");
+  const { data } = matter(fileContents);
+  return !!data.password && data.password === password;
 }
 
 export function getAllProducts(): Product[] {

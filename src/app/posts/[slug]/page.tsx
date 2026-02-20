@@ -1,10 +1,14 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { cookies } from "next/headers";
 import Link from "next/link";
 import { getPostBySlug, getAllPosts } from "@/lib/api";
 import markdownToHtml from "@/lib/markdownToHtml";
 import SocialLinks from "@/app/_components/social-links";
+import PasswordForm from "@/app/_components/password-form";
 import markdownStyles from "@/app/_components/markdown-styles.module.css";
+
+export const dynamic = "force-dynamic";
 
 type Params = {
     params: Promise<{
@@ -24,16 +28,18 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 
     return {
         title,
-        description: post.excerpt,
+        description: post.locked ? "" : post.excerpt,
     };
 }
 
 export async function generateStaticParams() {
     const posts = getAllPosts();
 
-    return posts.map((post) => ({
-        slug: post.slug,
-    }));
+    return posts
+        .filter((post) => !post.locked)
+        .map((post) => ({
+            slug: post.slug,
+        }));
 }
 
 export default async function Post({ params }: Params) {
@@ -44,7 +50,14 @@ export default async function Post({ params }: Params) {
         return notFound();
     }
 
-    const content = await markdownToHtml(post.content || "");
+    let showContent = true;
+    if (post.locked) {
+        const cookieStore = await cookies();
+        const unlocked = cookieStore.get(`unlocked_${slug}`);
+        showContent = !!unlocked;
+    }
+
+    const content = showContent ? await markdownToHtml(post.content || "") : "";
 
     return (
         <div className="container">
@@ -89,15 +102,19 @@ export default async function Post({ params }: Params) {
                         )}
                     </header>
 
-                    <div
-                        className={markdownStyles["markdown"]}
-                        dangerouslySetInnerHTML={{ __html: content }}
-                        style={{
-                            fontSize: '17px',
-                            lineHeight: 1.9,
-                            color: '#586e75'
-                        }}
-                    />
+                    {showContent ? (
+                        <div
+                            className={markdownStyles["markdown"]}
+                            dangerouslySetInnerHTML={{ __html: content }}
+                            style={{
+                                fontSize: '17px',
+                                lineHeight: 1.9,
+                                color: '#586e75'
+                            }}
+                        />
+                    ) : (
+                        <PasswordForm slug={slug} />
+                    )}
                 </article>
 
                 <div style={{

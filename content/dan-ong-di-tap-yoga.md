@@ -2,6 +2,7 @@
 title: Đàn Ông Đi Tập Yoga - Câu Chuyện Từ Nỗi Đau Đến Sự Tự Do
 slug: dan-ong-di-tap-yoga
 publishDate: 2025-11-14
+password: giangdinh
 categories:
   - blog
 tags:
@@ -37,8 +38,5 @@ Vèo cái đến bây giờ, sau hơn  năm tập, cơ địa bây giờ đã kh
 
 **“Yoga is the journey of the self, through the self, to the self.”** ― The Bhagavad Gita.
 
-
 Với mỗi người, hành trình đến với yoga, tập và thực hành yoga là một câu chuyện. Với cá nhân mình thì mục tiêu ban đầu là đến chỉ vì "chữa lưng", nhưng sau đó bản thân học được nhiều thứ trên hành trình này. Nếu được lắng nghe và chia sẻ thêm những câu chuyện khác thì sao nhỉ?
 #yoga #giangdinh #yogapractice #giangdinhyoga #yogainspiration #yogaflow
-
-

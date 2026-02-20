@@ -376,6 +376,26 @@ footer::before {
   text-overflow: ellipsis;
   white-space: nowrap;
   flex: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.post-lock-icon {
+  width: 14px;
+  height: 14px;
+  color: #93a1a1;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+.post-item-locked {
+  cursor: pointer;
+  opacity: 0.55;
+}
+
+.post-item-locked:hover {
+  opacity: 0.75;
 }
 
 .post-tags {
@@ -481,6 +501,11 @@ footer::before {
     min-width: auto !important;
     font-size: 13px;
     color: #93a1a1;
+  }
+
+  .post-lock-icon {
+    width: 12px;
+    height: 12px;
   }
 
   .post-tags {
@@ -676,6 +701,94 @@ article img {
 @media (min-width: 1025px) {
   .shop-grid {
     grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+/* Password Form */
+.password-form-wrapper {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.password-form-icon {
+  width: 48px;
+  height: 48px;
+  color: #93a1a1;
+  margin-bottom: 20px;
+}
+
+.password-form-title {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #586e75;
+  margin-bottom: 8px;
+}
+
+.password-form-desc {
+  font-size: 15px;
+  color: #93a1a1;
+  margin-bottom: 24px;
+}
+
+.password-form {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.password-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid rgba(147, 161, 161, 0.3);
+  border-radius: 8px;
+  background: rgba(253, 246, 227, 0.5);
+  color: #586e75;
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.password-input:focus {
+  border-color: #657b83;
+}
+
+.password-submit {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #657b83 0%, #586e75 100%);
+  color: #fdf6e3;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.password-submit:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(88, 110, 117, 0.25);
+}
+
+.password-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.password-error {
+  color: #dc322f;
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+@media (max-width: 768px) {
+  .password-form {
+    flex-direction: column;
   }
 }
 
