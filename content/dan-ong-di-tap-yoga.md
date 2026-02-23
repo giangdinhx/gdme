@@ -2,7 +2,6 @@
 title: Đàn Ông Đi Tập Yoga - Câu Chuyện Từ Nỗi Đau Đến Sự Tự Do
 slug: dan-ong-di-tap-yoga
 publishDate: 2025-11-14
-password: giangdinh
 categories:
   - blog
 tags:
