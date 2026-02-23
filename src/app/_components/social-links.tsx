@@ -15,7 +15,7 @@ export default function SocialLinks() {
             </Link>
 
             <Link
-                href="https://threads.com/giangdinhme"
+                href="https://www.threads.com/@giangdinh.me"
                 title="Threads"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -37,7 +37,7 @@ export default function SocialLinks() {
             </Link>
 
             <Link
-                href="https://instagram.com/giangdinhme"
+                href="https://www.instagram.com/giangdinh.me/"
                 title="Instagram"
                 target="_blank"
                 rel="noopener noreferrer"
