@@ -21,7 +21,4 @@ Vì muốn có một chỗ cá nhân — nơi mình có thể tự do chia sẻ 
 
 Nếu bạn cũng đang tò mò về một thứ gì đó — và thích đi cùng người đang trên đường, không phải người đã đến đích — thì có thể bạn sẽ thấy chút gì đó ở đây.
 
-🔗 Link ở đây nhé:
-https://www.giangdinh.me/
-
 Giang Cua.
